@@ -42,4 +42,11 @@ class MybatisPlusDemoApplicationTests {
         userList.forEach(System.out::println);
     }
 
+    @Test
+    public void testSelectAllByName(){
+        System.out.println("------select all data of james----------");
+        User result = userMapper.selectAllByName("james");
+        System.out.println(result);
+    }
+
 }
