@@ -49,4 +49,11 @@ class MybatisPlusDemoApplicationTests {
         System.out.println(result);
     }
 
+    @Test
+    public void testService(){
+        System.out.println("------select all data of james----------");
+        User result = userService.selectAllByName("james");
+        System.out.println(result);
+    }
+
 }
