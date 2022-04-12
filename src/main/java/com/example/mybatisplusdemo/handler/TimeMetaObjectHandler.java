@@ -22,6 +22,15 @@ public class TimeMetaObjectHandler implements MetaObjectHandler {
         log.info("start insert fill ......");
         this.strictInsertFill(metaObject,"createTime", () -> LocalDateTime.now(),LocalDateTime.class);
         this.strictInsertFill(metaObject,"updateTime", () -> LocalDateTime.now(),LocalDateTime.class);
+        Object gender = this.getFieldValByName("gender", metaObject);
+        if(null == gender){
+            this.strictInsertFill(metaObject,"gender", Integer.class,1);
+        }
+        boolean hasAuthor = metaObject.hasSetter("author");
+        if(hasAuthor){
+            log.info("author insert......");
+            this.strictInsertFill(metaObject,"author", String.class,"demo");
+        }
 
     }
 
