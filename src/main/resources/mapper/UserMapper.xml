@@ -8,7 +8,7 @@
     </sql>
     <select id="selectAllByName" resultType="com.example.mybatisplusdemo.entity.User">
         select <include refid="Base_Column"/>
-        from user
+        from t_user
         where user_name = #{userName}
     </select>
 </mapper>
