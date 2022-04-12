@@ -1,10 +1,14 @@
 package com.example.mybatisplusdemo.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 /**
  * @author fangzheng
@@ -12,10 +16,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@Table(value = "t_user")
 @TableName("t_user")
 public class User {
-   // @TableId(type = IdType.ASSIGN_ID)
+
     @TableId
     private Long uid;
 
@@ -24,5 +27,11 @@ public class User {
     private String phoneNumber;
 
     private int gender;
+
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
 
 }

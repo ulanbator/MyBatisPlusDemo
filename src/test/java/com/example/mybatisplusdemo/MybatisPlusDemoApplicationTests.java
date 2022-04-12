@@ -24,7 +24,7 @@ class MybatisPlusDemoApplicationTests {
         userList.forEach(System.out::println);*/
         System.out.println("------insert data----------");
         User user = new User();
-        user.setUserName("kobe");
+        user.setUserName("Tacco");
         user.setPhoneNumber("13966610568");
         user.setGender(1);
         int count = userMapper.insert(user);
