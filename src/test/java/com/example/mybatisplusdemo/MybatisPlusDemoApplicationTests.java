@@ -65,7 +65,7 @@ class MybatisPlusDemoApplicationTests {
     public void deleteService(){
         Long id = 1513849005650395137L;
        boolean flag =  userService.removeById(id);
-       if(flag == true){
+       if(flag){
            System.out.println("One data deleted");
        }else{
            System.out.println("No data deleted");
