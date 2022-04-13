@@ -35,4 +35,6 @@ public class User {
     @TableLogic
     private Boolean deleted;
 
+    private Integer age;
+
 }

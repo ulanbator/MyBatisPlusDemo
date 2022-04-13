@@ -4,11 +4,16 @@
 
 <mapper namespace="com.example.mybatisplusdemo.mapper.UserMapper">
     <sql id="Base_Column">
-        user_name,phone_number,gender
+        uid, user_name, phone_number, gender, create_time, update_time, is_deleted, age
     </sql>
     <select id="selectAllByName" resultType="com.example.mybatisplusdemo.entity.User">
         select <include refid="Base_Column"/>
         from t_user
         where user_name = #{userName}
+    </select>
+    <select id="selectPageByAge" resultType="com.example.mybatisplusdemo.entity.User">
+        select <include refid="Base_Column"/>
+        from t_user
+        where age > #{age}
     </select>
 </mapper>

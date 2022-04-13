@@ -25,8 +25,15 @@ public class InterceptorTest {
         Page<User> pageParam = new Page<>(0,5);
         userMapper.selectPage(pageParam, null);
         List<User> userList = pageParam.getRecords();
-        System.out.println(userList);
+        //System.out.println(userList);
 
+    }
+   @Test
+    public void testSelectByPage(){
+        Page<User> pageParam = new Page<>(0,5);
+        userMapper.selectPageByAge(pageParam, 10);
+        List<User> userList = pageParam.getRecords();
+        userList.forEach(System.out::println);
 
     }
 }
