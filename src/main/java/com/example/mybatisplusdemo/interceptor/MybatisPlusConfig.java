@@ -1,4 +1,4 @@
-package interceptor;
+package com.example.mybatisplusdemo.interceptor;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
